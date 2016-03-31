@@ -4,7 +4,7 @@ title: Setting up a blog
 subtitle: With Jekyll, Github, Vagrant and knitr
 ---
 
-### After a few hours, it finally works seemlessly.
+### After a few hours, it finally works seamlessly.
 
 I had this idea for several months since I randomly stumbled upon Github Pages. The first step was finding a Jekyll layout I liked.
 Thankfully, **Dean Attali** has done an amazing job with his repository [beautiful jekyll](https://github.com/daattali/beautiful-jekyll). Very nice, easy to use and with a comprehensive readme, perfect to get started with [Jekyll](https://jekyllrb.com/).
