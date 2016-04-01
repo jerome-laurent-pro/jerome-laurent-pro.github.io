@@ -2,7 +2,7 @@
 title: "Dataviz weekly : week 13"
 author: "Jérôme LAURENT"
 output: html_document
-bigimg: /img/2016-04-01-dataviz_week_13/drone_front.jpg
+bigimg: /img/2016-04-01-dataviz-week13/drone_front.jpg
 tags: [dataviz-weekly]
 ---
 
@@ -106,6 +106,6 @@ So, have a GIF instead.
 g <- gg_animate(gg, ani.width=750, ani.height=400, interval = .5, "drones.gif")
 ```
 
-![drones_gif](/img/2016-04-01-dataviz_week_13/drones.gif)
+![drones_gif](/img/2016-04-01-dataviz-week13/drones.gif)
 
   
