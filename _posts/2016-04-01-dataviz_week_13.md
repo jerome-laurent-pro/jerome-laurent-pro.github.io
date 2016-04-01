@@ -6,8 +6,10 @@ bigimg: /img/2016-04-01-dataviz_week_13/drone_front.jpg
 tags: [dataviz-weekly]
 ---
 
-Yesterday, I saw [hrbrmstr's post ](https://rud.is/b/2016/03/30/introducing-a-weekly-r-python-js-etc-vis-challenge/) about a weekly visualization contest and thought it was a great idea.
-I first wanted to map the number of sighting per state residents but someone  had already done a [nice post](http://jabranham.com/blog/2016/03/ggplot-maps.html) about it so I'll try something different.
+Yesterday, I saw [hrbrmstr's post ](https://rud.is/b/2016/03/30/introducing-a-weekly-r-python-js-etc-vis-challenge/) about a weekly visualization contest and thought it was a terrific idea.
+
+This week dataset is about drone reports in the USA.
+I first wanted to map the number of sighting per state residents but someone had already done a [nice post](http://jabranham.com/blog/2016/03/ggplot-maps.html) about it so I'll try something different.
 
 In a first time, I kept what was done by hrbrmstr to get the data.
 
@@ -78,7 +80,7 @@ gg <- ggplot() +
            map = us, fill = "#2b2b2b", color = "#b4f2b8", size = 0.15) +  #b4f2b8
   geom_point(data=drones_sight, aes(x=lon, y=lat, frame = wk, size = count), color = "#ffffff") +
   scale_size_area() +
-  labs(x = NULL, y = NULL, title = "Nationwide US drone sightings, the week of the") +
+  labs(x = NULL, y = NULL, title = "Mainland USA drone sightings, the week of the") +
   theme(axis.ticks = element_blank(),
         axis.text = element_blank(),
         panel.background = element_rect(fill = "#2b2b2b"),
@@ -86,7 +88,8 @@ gg <- ggplot() +
         panel.grid = element_blank(),
         legend.position = "none",
         plot.title = element_text(size=22)) +
-  coord_fixed()
+  coord_fixed() +
+  coord_map("albers", lat0=39, lat1=45)
 {% endhighlight %}
 Then I wanted to use `gganimate` to see a weekly evolution but I had issues that I was unable to resolve on my Windows machine.
 
@@ -98,7 +101,7 @@ gg_animate(gg)
 So, have a GIF instead.
 
 {% highlight r %}
-g <- gg_animate(gg, ani.width=900, ani.height=391, interval = .5, "drones.gif")
+g <- gg_animate(gg, ani.width=750, ani.height=400, interval = .5, "drones.gif")
 {% endhighlight %}
 
 ![drones_gif](/img/2016-04-01-dataviz_week_13/drones.gif)

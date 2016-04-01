@@ -1,0 +1,10 @@
+base
+knitr
+ggplot2
+readxl
+dplyr
+xml2
+rvest
+ggmap
+gganimate
+maps
